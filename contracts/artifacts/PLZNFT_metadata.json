@@ -299,6 +299,13 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "deposit",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -566,6 +573,10 @@
 				"outputs": [],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
 			}
 		],
 		"devdoc": {
@@ -857,11 +868,11 @@
 			]
 		},
 		"contracts/4_PLZNFT.sol": {
-			"keccak256": "0x3ac5abd1d91821062534cbb65a08ef37dc2ba98525ec89d2a7e3ec78087162bb",
+			"keccak256": "0x696a08f706df97c81830cd7a335f6395a1ef8772e6a282d89721becec19a110f",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ce55afe298450d45f0e4120189abcc98c2276cc28c27f213476cb48fcac07196",
-				"dweb:/ipfs/QmYm5CkMjBS9DiTE6W7FgfunY9sVZ6ghLkc8TxKL1oP3Ko"
+				"bzz-raw://7e58f4cd0c4a0a88123ba92ac3962b3c04666617108b98dd20d3a41bd0abfc3a",
+				"dweb:/ipfs/QmW1LvvXYc9U36fUGTp2uBQy1DBKjWUCVNDa8AKwZp5V2y"
 			]
 		}
 	},

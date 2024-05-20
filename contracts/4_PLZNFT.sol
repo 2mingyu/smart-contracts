@@ -35,13 +35,25 @@ contract PLZNFT is ERC721URIStorage, Ownable(msg.sender) {
         revert("Renouncing ownership is disabled.");
     }
 
-    // NFT를 민팅하고 바로 다른 주소로 전송하는 함수
+    // 컨트랙트가 ETH를 받을 수 있도록 하는 함수
+    receive() external payable {}
+
+    // 컨트랙트의 소유자가 ETH를 보낼 수 있도록 하는 함수
+    function deposit() external payable onlyOwner {}
+
+    // NFT를 민팅하고 바로 다른 주소로 전송하며 ETH를 전송하는 함수
     // 컨트랙트 소유자만 호출 가능 (onlyOwner)
     function mintAndTransfer(address recipient, string memory tokenURI) public onlyOwner {
+        require(address(this).balance >= 1 ether, "Not enough ETH in contract");
+        
         uint256 newTokenId = _tokenIdCounter;
         _safeMint(msg.sender, newTokenId);
         _setTokenURI(newTokenId, tokenURI);
         _tokenIdCounter++;
+
+        // 수신자에게 ETH 전송
+        (bool sent, ) = recipient.call{value: 1 ether}("");
+        require(sent, "Failed to send Ether");
 
         _safeTransfer(msg.sender, recipient, newTokenId, "");
     }
