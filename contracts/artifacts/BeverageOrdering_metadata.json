@@ -61,6 +61,25 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "beverageList",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
 						"name": "orderIndex",
 						"type": "uint256"
 					}
@@ -68,6 +87,19 @@
 				"name": "confirmOrder",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAllValidBeverages",
+				"outputs": [
+					{
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -319,11 +351,11 @@
 			]
 		},
 		"contracts/6_Ordering.sol": {
-			"keccak256": "0xc03bd6faa54ea5c715d80af4ce0ee515385aabf8f875388686a77e7bf4d1e6f1",
+			"keccak256": "0x1fa26e9ed6d8f5327d3258e10dedbbdaa557332e9a8e3ab688d9b5135a8477be",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://3fdd702cbc9ca54fee1e23a8b636fcd6906556d531df076fe2175f211ae5ed4d",
-				"dweb:/ipfs/QmR4rW2EwS2Cdup3qTfdJtBDyMm9etWZfqkhmLRsFV7ybt"
+				"bzz-raw://7be9e8556f0b787b3bc9abb4b7284607dbebda2b75b3ce588d5b8aeabda04906",
+				"dweb:/ipfs/QmcGcMwxxsdRoFNfeW1opFyoWWsLLLXySTFVnCZB8ZbTXk"
 			]
 		}
 	},

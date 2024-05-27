@@ -16,6 +16,7 @@ contract BeverageOrdering is Ownable(msg.sender) {
 
     Order[] public orders;
     mapping(string => bool) public validBeverages;
+    string[] public beverageList;
 
     // renounceOwnership 함수를 오버라이드하여 비활성화
     function renounceOwnership() view public override onlyOwner {
@@ -27,11 +28,31 @@ contract BeverageOrdering is Ownable(msg.sender) {
         tokenContract = IERC20(_tokenAddress);
         validBeverages["americano"] = true;
         validBeverages["caffelatte"] = true;
+        beverageList.push("americano");
+        beverageList.push("caffelatte");
     }
 
     // 음료의 유효성 설정
     function setBeverageValidity(string memory beverage, bool isValid) public onlyOwner {
         validBeverages[beverage] = isValid;
+        bool exists = false;
+        for (uint256 i = 0; i < beverageList.length; i++) {
+            if (keccak256(abi.encodePacked(beverageList[i])) == keccak256(abi.encodePacked(beverage))) {
+                exists = true;
+                break;
+            }
+        }
+        if (isValid && !exists) {
+            beverageList.push(beverage);
+        } else if (!isValid && exists) {
+            for (uint256 i = 0; i < beverageList.length; i++) {
+                if (keccak256(abi.encodePacked(beverageList[i])) == keccak256(abi.encodePacked(beverage))) {
+                    beverageList[i] = beverageList[beverageList.length - 1];
+                    beverageList.pop();
+                    break;
+                }
+            }
+        }
     }
 
     // 주문 함수
@@ -59,5 +80,10 @@ contract BeverageOrdering is Ownable(msg.sender) {
     function getOrder(uint256 orderIndex) public view returns (Order memory) {
         require(orderIndex < orders.length, "Invalid order index");
         return orders[orderIndex];
+    }
+
+    // 유효 음료 조회 함수
+    function getAllValidBeverages() public view returns (string[] memory) {
+        return beverageList;
     }
 }
