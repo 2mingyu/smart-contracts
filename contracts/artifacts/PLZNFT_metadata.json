@@ -727,7 +727,7 @@
 		"compilationTarget": {
 			"contracts/4_PLZNFT.sol": "PLZNFT"
 		},
-		"evmVersion": "cancun",
+		"evmVersion": "london",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"

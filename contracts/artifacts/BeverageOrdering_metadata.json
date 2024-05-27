@@ -178,7 +178,7 @@
 				"inputs": [],
 				"name": "renounceOwnership",
 				"outputs": [],
-				"stateMutability": "nonpayable",
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -282,7 +282,7 @@
 		"compilationTarget": {
 			"contracts/6_Ordering.sol": "BeverageOrdering"
 		},
-		"evmVersion": "cancun",
+		"evmVersion": "london",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -319,11 +319,11 @@
 			]
 		},
 		"contracts/6_Ordering.sol": {
-			"keccak256": "0x0477db3dfe9ba55858d6e0aaf5f94562f305346d3cfdddee9062ff0e70b4c99f",
+			"keccak256": "0xc03bd6faa54ea5c715d80af4ce0ee515385aabf8f875388686a77e7bf4d1e6f1",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://d7b16d0988840e9949f0dc0aea2fa22279dce43bcfb40560e781667da81fb958",
-				"dweb:/ipfs/QmbeKyubvTykG4CveYPwCrx9WMea2meV2fiG9xb237mPAF"
+				"bzz-raw://3fdd702cbc9ca54fee1e23a8b636fcd6906556d531df076fe2175f211ae5ed4d",
+				"dweb:/ipfs/QmR4rW2EwS2Cdup3qTfdJtBDyMm9etWZfqkhmLRsFV7ybt"
 			]
 		}
 	},

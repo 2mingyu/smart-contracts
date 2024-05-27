@@ -15,6 +15,11 @@ contract PLZToken is ERC20, Ownable(msg.sender) {
         _mint(msg.sender, 1e24);  // 초기 공급량 설정 (예: 1,000,000 PLZ)
     }
 
+    // renounceOwnership 함수를 오버라이드하여 비활성화
+    function renounceOwnership() view public override onlyOwner {
+        revert("Renouncing ownership is disabled.");
+    }
+
     // NFT 소유자만이 토큰을 요청할 수 있고, 하루에 한 번만 요청 가능
     function requestTokens() public {
         require(nftContract.balanceOf(msg.sender) > 0, "You must own at least one NFT");

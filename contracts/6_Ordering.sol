@@ -17,6 +17,11 @@ contract BeverageOrdering is Ownable(msg.sender) {
     Order[] public orders;
     mapping(string => bool) public validBeverages;
 
+    // renounceOwnership 함수를 오버라이드하여 비활성화
+    function renounceOwnership() view public override onlyOwner {
+        revert("Renouncing ownership is disabled.");
+    }
+
     // 생성자에서 화폐 토큰 컨트랙트 주소를 입력받기
     constructor(address _tokenAddress) {
         tokenContract = IERC20(_tokenAddress);

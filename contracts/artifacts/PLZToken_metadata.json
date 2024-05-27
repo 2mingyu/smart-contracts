@@ -335,7 +335,7 @@
 				"inputs": [],
 				"name": "renounceOwnership",
 				"outputs": [],
-				"stateMutability": "nonpayable",
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -562,7 +562,7 @@
 		"compilationTarget": {
 			"contracts/5_PLZToken.sol": "PLZToken"
 		},
-		"evmVersion": "cancun",
+		"evmVersion": "london",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -639,11 +639,11 @@
 			]
 		},
 		"contracts/5_PLZToken.sol": {
-			"keccak256": "0xa0623756d2e7a9c79614fff5042fd3de38b92ab5d35a074883ba8a0e16508161",
+			"keccak256": "0x66ce9ed67304554acfb3ec8d506373056cbe3a15654f234f6361729d603fb337",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://110b556fe0490e907f83b89bd6d616849a94c0c51adb8f24e7f3e134f5af3330",
-				"dweb:/ipfs/QmPq51hyxC2YbK5kvLuTiNn8TFNW3NjeoUWjY3c3rZdEA9"
+				"bzz-raw://5b15674afbbfc162b6156e3e4b027748dbe1025da06d543d6f8a0532cbc6574a",
+				"dweb:/ipfs/QmXYZVRyWsTsXTvcEZeX7g12phUbFJQdTwpeZD4fBVJWkk"
 			]
 		}
 	},
